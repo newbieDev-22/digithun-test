@@ -1,4 +1,4 @@
-function max(array) {
+function getMax(array: number[]): number {
   if (array.length === 0) {
     throw new Error("Array is empty.");
   }
@@ -10,15 +10,14 @@ function max(array) {
   return result;
 }
 
-function secondMax(array) {
-  if (array.length === 0) {
-    throw new Error("Array is empty.");
-  }
+function secondMax(array: number[]): number {
   const dummyArray = [...array];
-  const maxIndex = array.indexOf(max(dummyArray));
+  const maxIndex = array.indexOf(getMax(dummyArray));
   if (maxIndex !== -1) {
     dummyArray.splice(maxIndex, 1);
-    return max(dummyArray);
+    return getMax(dummyArray);
+  } else {
+    throw new Error("Not found maximum number.");
   }
 }
 

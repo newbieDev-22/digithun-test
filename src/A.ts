@@ -1,4 +1,4 @@
-function max(array) {
+function max(array: number[]): number {
   if (array.length === 0) {
     throw new Error("Array is empty.");
   }
