@@ -2,12 +2,11 @@ function getMax(array: number[]): number {
   if (array.length === 0) {
     throw new Error("Array is empty.");
   }
-  const result = array.reduce(
+  return array.reduce(
     (maxValue, currentValue) =>
       (maxValue = currentValue > maxValue ? currentValue : maxValue),
     array[0]
   );
-  return result;
 }
 
 function secondMax(array: number[]): number {
